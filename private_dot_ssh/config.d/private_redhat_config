@@ -1,0 +1,42 @@
+Host beaker* *.eng.bos.redhat.com *.tlv.redhat.com
+    User root
+    UserKnownHostsFile /dev/null
+    StrictHostkeyChecking no
+
+Host kibbles  kibblesnbits kibblesnbits.bos.devel.redhat.com
+    User lkellogg
+    HostName kibblesnbits.bos.devel.redhat.com
+
+Host code.engineering.redhat.com
+    User lkellogg
+
+Host ovpn-phx2.redhat.com rhvpn1
+    User lkellogg
+    HostName ovpn-phx2.redhat.com
+    Port 330
+    DynamicForward 1080
+
+Host pilotssh.redhat.com pilot rhvpn2
+    User lkellogg
+    HostName pilotssh.redhat.com
+    Port 443
+    DynamicForward 1080
+
+Host shell.bos.redhat.com
+    User lkellogg
+
+Host fedorashell.rdu.redhat.com fedorashell01.rdu.redhat.com fedorashell
+    HostName fedorashell01.rdu.redhat.com
+    User larsks
+
+Host booom
+    ProxyJump larsproxy.usersys.redhat.com
+    HostName 192.168.122.1
+    User root
+
+Host people.redhat.com
+    User lkellogg
+    AddressFamily inet
+
+Host *.redhat.com
+    GSSAPIAuthentication yes

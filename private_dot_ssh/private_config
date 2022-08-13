@@ -1,0 +1,62 @@
+# This *must* come before any Host entry (otherwise it is not a top-level
+# directive but is instead part of the preceding Host entry).
+Include config.d/*
+
+Host github.com gitlab.com
+    User git
+    RequestTTY no
+
+Host pkgs.fedoraproject.org
+    User larsks
+
+Host *.launchpad.net
+    User larsks
+
+Host m-net.arbornet.org m-net
+    HostName m-net.arbornet.org
+    User larsks
+
+Host review.gerrithub.io
+    User larsks
+
+Host review.*
+    Port 29418
+    ForwardAgent no
+    ForwardX11 no
+
+Host 172.* 10.* 192.168.* *.localdomain 127.0.0.1 localhost *.virt *.storage
+    UserKnownHostsFile /dev/null
+    StrictHostkeyChecking no
+
+Host *.cloudapp.net
+    UserKnownHostsFile /dev/null
+    StrictHostkeyChecking no
+
+Host tunnelr
+    HostName nyc.tunnelr.com
+    User larsks
+    DynamicForward 1080
+
+Host raspberrypi.local raspberrypi.house raspberrypi
+    UserKnownHostsFile /dev/null
+    StrictHostkeyChecking no
+
+Host bouncer.oddbit.com
+    User root
+
+Host review.opendev.org review.gerrithub.io
+    PubkeyAcceptedKeyTypes +ssh-rsa
+
+Host vmi/*
+    UserKnownHostsFile /dev/null
+    StrictHostkeyChecking no
+
+Host *.upterm.dev
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    HostkeyAlgorithms +ssh-rsa
+
+Host *
+    AddKeysToAgent no
+    ForwardAgent yes
+    GSSAPIAuthentication no
+    ServerAliveInterval 30

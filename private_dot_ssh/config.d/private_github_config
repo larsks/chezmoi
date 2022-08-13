@@ -1,0 +1,12 @@
+Host oddbit.github.com
+	Hostname github.com
+	IdentitiesOnly yes
+	IdentityFile ~/.ssh/id_rsa_oddbit
+
+Host redhat.github.com
+	Hostname github.com
+	IdentitiesOnly yes
+	IdentityFile ~/.ssh/id_rsa_lkellogg
+
+Host *.github.com github.com
+	User git

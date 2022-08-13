@@ -1,0 +1,95 @@
+[alias]
+	ci = commit
+	co = checkout
+	fix = commit --amend --no-edit
+	update-modified = !git add -u && git fix
+	um = !git update-modified
+	current = rev-parse --short HEAD
+	hist = log --pretty=format:'%C(blue)%h%C(reset) %ad | %C(yellow)%<(20,trunc)%ae%C(reset) | %s%d [%an]' --graph --date=short
+	changed = show --name-only
+	branch-name = rev-parse --abbrev-ref --symbolic-full-name HEAD
+	has-changes = diff-index --quiet HEAD --
+	force = push --force-with-lease
+	please = push --force-with-lease
+	st = status --short --branch
+	uno = status -uno
+	conflicts = diff --name-only --diff-filter=U
+	tracking = rev-parse --abbrev-ref --symbolic-full-name @{u}
+	prev = switch @{-1}
+	last = switch @{-1}
+	msg = show -s --format=%B
+	sync = push -u origin HEAD
+	subject = show --quiet --format=%s
+	body = show --quiet --format=%B
+	since = !sh -c 'git log --no-decorate --oneline "$1"..' --
+	rr = log --oneline --format='%h %<(30)%d %s' --decorate-refs='refs/remotes/origin/feature' --abbrev=10
+	files = diff-tree --no-commit-id --name-only -r
+[user]
+	name = Lars Kellogg-Stedman
+	useConfigOnly = true
+	email = lars@oddbit.com
+	signkey = 362D63A80853D4CF
+[push]
+	default = simple
+	followTags = true
+[color]
+	ui = auto
+[branch]
+	autosetuprebase = always
+[core]
+	excludesfile = ~/.config/git/ignore
+	autocrlf = input
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[rebase]
+	autosquash = true
+[pull]
+	rebase = true
+[stgit "alias"]
+	fgo = !stg-fzf-goto
+	fed = !stg-fzf-edit
+	fork = !stg-fzf-fork
+[advice]
+	detachedHead = false
+[init]
+	defaultBranch = main
+[blame]
+	showEmail = true
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+[delta]
+	line-numbers = true
+	side-by-side = true
+	syntax-theme = Coldark-Dark
+	navigate = true
+[interactive]
+	diffFilter = delta --color-only
+[commit]
+	verbose = true
+	gpgsign = true
+#[credential "https://github.com"]
+#	helper = 
+#	helper = !/usr/bin/gh auth git-credential
+#[credential "https://gist.github.com"]
+#	helper = 
+#	helper = !/usr/bin/gh auth git-credential
+
+[include]
+	path = ~/.config/git/aliases.conf
+
+[includeIf "gitdir/i:~/projects/bumoc/"]
+	path = ~/.config/git/redhat.conf
+[includeIf "gitdir/i:~/projects/ocp-on-nerc/"]
+	path = ~/.config/git/redhat.conf
+[includeIf "gitdir/i:~/projects/redhat/"]
+	path = ~/.config/git/redhat.conf
+[includeIf "gitdir/i:~/rpmbuild/BUILD/"]
+	path = ~/.config/git/rpm.conf
+[submodule]
+	recurse = true

@@ -1,0 +1,12 @@
+---
+session_name: chat
+start_directory: "~"
+windows:
+  - window_name: irc
+    layout: tiled
+    panes:
+      - exec weechat
+  - window_name: slack
+    layout: tiled
+    panes:
+      - exec weeslack

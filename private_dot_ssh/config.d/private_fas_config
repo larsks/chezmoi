@@ -1,0 +1,23 @@
+Host *-obm.*.rc.fas.harvard.edu
+    User root
+    PubkeyAuthentication no
+
+Host *.rc.fas.harvard.edu
+    StrictHostkeyChecking false
+
+Host *.nerc-ocp-*.rc.fas.harvard.edu
+    User core
+    IdentityFile ~/.ssh/id_rsa_nerc_infra
+
+Host nerc-admin01.rc.fas.harvard.edu nerc-admin01 nerc-admin nerc-proxy
+    Hostname nerc-admin01.rc.fas.harvard.edu
+    User root
+
+Host *.rc.fas.harvard.edu
+    UserKnownHostsFile /dev/null
+    StrictHostkeyChecking false
+
+Host nerc-bootstrap.rc.fas.harvard.edu nerc-bootstrap
+    Hostname nerc-bootstrap.rc.fas.harvard.edu
+    User root
+    ProxyJump nerc-admin01.rc.fas.harvard.edu

@@ -1,0 +1,205 @@
+CanonicalizeHostname yes
+
+Host kumo-undercloud kumo-control-* kumo-compute-*
+  UserKnownHostsFile /dev/null
+  StrictHostkeyChecking no
+  ProxyJump kumo-hil
+  User stack
+
+Host e1-proxy e1-ssh.infra.massopen.cloud
+  ControlMaster auto
+  ControlPath ~/.ssh/cm_socket/%C
+  ControlPersist 30m
+  Hostname e1-ssh.massopen.cloud
+  Port 2228
+
+Host e1-control-*.eng1.moc.edu e1-control-* e1-ipmi-gw
+  ProxyJump e1-proxy
+
+Host e1-ipmi-gw
+  Port 2228
+
+Host e1-vmhost-*
+  User root
+  ProxyJump e1-proxy
+
+Host e1-compute-* e1-gcompute-*
+  ProxyJump e1-control-01
+
+Host kumo-hil kumo-hil.infra.massopen.cloud kumo-hil-client.infra.massopen.cloud
+  Hostname kumo-hil-client.infra.massopen.cloud
+
+Host kumo-ipmi-gw
+  ProxyJump kumo-hil
+
+Host kumo-hil-server
+  Hostname 192.168.100.210
+  ProxyJump kumo-hil
+
+Host kumo-bmi kumo-bmi-no-seccloud.infra.massopen.cloud
+  Hostname kumo-bmi-no-seccloud.infra.massopen.cloud
+  ProxyJump kumo-hil
+
+Host kumo-nexus
+  Hostname 10.1.11.2
+  User admin
+  ProxyJump kumo-hil-server
+
+Host kumo-ipmi-gw kumo-ssh
+  Hostname kumo-ipmi-gw
+  ProxyJump kumo-hil
+
+Host esi-sandbox esi-sandbox-0
+  Hostname 172.16.100.171
+  ProxyJump kumo-hil
+  User stack
+
+Host esi-vm-host
+  Hostname 172.16.100.123
+  ProxyJump kumo-hil
+  User stack
+
+Host esi-sandbox-1
+  Hostname 172.16.100.124
+  ProxyJump kumo-hil
+  User stack
+
+Host esi-*.massopen.cloud
+  UserKnownHostsFile /dev/null
+  StrictHostkeyChecking no
+  User root
+
+Host kzn-h kzn-h.infra.massopen.cloud
+  Hostname kzn-h.infra.massopen.cloud
+
+Host dell-*.kumo
+  ProxyJump kumo-bmi
+
+Host kzn-ipmi-gw kzn-proxy kzn-ipmi kzn-ipmi-gw.infra.massopen.cloud
+  Port 2228
+  ControlMaster auto
+  ControlPath ~/.ssh/cm_socket/%C
+  ControlPersist 30m
+  Hostname kzn-ipmi-gw.infra.massopen.cloud
+# Hostname i2.massopen.cloud
+  Hostname i1.massopen.cloud
+
+Host i1.massopen.cloud
+  Port 2228
+
+Host kzn-undercloud kzn-undercloud.kzn.moc
+  User stack
+  Hostname kzn-undercloud.kzn.moc
+
+Host kzn-undercloud-staging kzn-undercloud-staging.kzn.moc
+  User stack
+  Hostname kzn-undercloud-staging.kzn.moc
+
+Host *.kzn.moc *.kzn.moc.ipmi
+  User root
+  UserKnownHostsFile /dev/null
+  StrictHostkeyChecking false
+  ProxyJump kzn-proxy
+
+Host *-ipmi.cnv.massopen.cloud
+  User mocadmin
+  UserKnownHostsFile /dev/null
+  StrictHostkeyChecking false
+  ProxyJump kzn-proxy
+
+Host kzn-nagios
+  ProxyJump kzn-proxy
+
+Host kaizenold-proxy
+  Hostname kzn-s.massopen.cloud
+  Port 2228
+  ControlMaster auto
+  ControlPath ~/.ssh/cm_socket/%C
+  ControlPersist 30m
+
+Host flocx-demo
+  Hostname 192.12.185.246
+  User centos
+
+Host monitor
+  Hostname 172.16.0.250
+  ProxyJump kzn-proxy
+
+Host cnv-dhcp*
+  User root
+
+Host *.cnv.massopen.cloud *.cnv2.massopen.cloud *.ocp-prod.massopen.cloud
+  User core
+  UserKnownHostsFile /dev/null
+  StrictHostkeyChecking no
+
+Host *.cnv2.massopen.cloud
+  IdentityFile ~/.ssh/id_rsa_kni
+
+Host ov*.massopen.cloud
+  User root
+
+Host 128.31.27.*
+  UserKnownHostsFile /dev/null
+  StrictHostkeyChecking no
+
+Host massopen.cloud
+  User u1553-gwbxzzc73dcc
+  Port 18765
+
+Host kzn-rtr kzn-rtr.infra.massopen.cloud
+  Hostname kzn-rtr.infra.massopen.cloud
+  Port 2228
+
+Host truenas.moc
+  Hostname 10.253.0.10
+  User root
+  ProxyJump kzn-rtr
+
+Host ansible.moc
+  ProxyJump kzn-rtr
+  Hostname 172.16.0.204
+  User root
+
+Host virtbox.moc
+  Hostname 128.31.28.150
+  User root
+
+Host ns1.massopen.cloud mail.massopen.cloud sso*.massopen.cloud mochat.massopen.cloud
+  User root
+  ProxyJump kzn-rtr
+
+Host 10.1.* 10.2.* 10.3.*
+  User root
+  ProxyJump kzn-proxy
+  IdentityFile ~/.ssh/id_rsa_idrac
+  IdentitiesOnly yes
+
+Host *.ocp.virt
+  ProxyJump virtbox.moc
+
+Host kzn-mon*
+  User root
+  ProxyJump kzn-proxy
+
+Host dell-12
+  ProxyJump kumo-hil
+  User root
+  Hostname 172.16.100.121
+
+Host coldfront
+  ProxyJump dell-12
+  User stack
+  Hostname 172.16.97.150
+
+Host *.curator.massopen.cloud
+    IdentityFile ~/.ssh/acm_provisioner_rsa
+    User core
+
+Host rgw-j-vip.int.massopen.cloud
+    ProxyJump kzn-mon1
+    User root
+
+Host kzn-mon1
+    ProxyJump kzn-proxy
+    User root
