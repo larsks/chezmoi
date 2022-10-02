@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/slow/lars/src/asn-dotfiles/nvim/.config/nvim/lua'
+let g:netrw_dirhist_4='/home/lars/tmp/asm'
+let g:netrw_dirhist_3='/home/lars/projects/bumoc/rhosp-director-config/playbooks'
+let g:netrw_dirhist_2='/home/lars/projects/desktop-ansible/main/roles/monitoring/grafana/files'
+let g:netrw_dirhist_1='/home/lars/projects/desktop-ansible/main/roles/monitoring/grafana'
+let g:netrw_dirhist_0='/home/lars/projects/desktop-ansible/main/roles/monitoring/grafana/templates'
+let g:netrw_dirhist_9='/home/lars/projects/desktop-ansible/main/roles/monitoring/grafana'
+let g:netrw_dirhist_8='/home/lars/projects/desktop-ansible/main/roles/monitoring'
+let g:netrw_dirhist_7='/home/lars/projects/desktop-ansible/main/roles/monitoring/prometheus/files'
+let g:netrw_dirhist_6='/home/lars/projects/desktop-ansible/main/roles/monitoring/node_exporter/files'
