@@ -1,1 +1,1 @@
-export PIPENV_PYPI_MIRROR=https://devpi.internal/root/pypi/+simple/
+export PIPENV_PYPI_MIRROR=http://devpi.internal/root/pypi/+simple/
