@@ -401,3 +401,6 @@ precommit
 Traefik
 middleware
 webhook
+ArgoCD
+RP2040
+uvicorn
