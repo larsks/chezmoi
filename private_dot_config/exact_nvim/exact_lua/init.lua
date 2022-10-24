@@ -29,7 +29,7 @@ o.shada = [[!,'100,<1000,s10,h,r/tmp]]
 o.showtabline = 2
 o.tabpagemax = 100
 o.updatetime = 100
-
+o.scrolloff = 20
 o.signcolumn = "yes:2"
 
 -- in init.vim this was set wildignore += "*.mpy", but since wildignore
