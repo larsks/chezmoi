@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	echo "ERROR: no token" >&2
+	exit 1
+fi
+
+current_context=$(kubectl config current-context)
+current_user=$(kubectl config view | yq -r --arg context "$current_context" '
+	.contexts[]|select(.name == $context)|.context.user
+	')
+
+exec kubectl config set-credentials $current_user --token "$@"
