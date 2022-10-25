@@ -36,6 +36,8 @@ jgm/pandoc
 ogham/exa -a ^musl
 sharkdp/fd -a ^musl
 aquasecurity/trivy -a Linux-64bit.tar.gz -a ^pem -a ^sig
+aristocratos/btop
+ClementTsang/bottom -a tar.gz -a ^musl -a ^gnu2 -f btm
 
 # eget is unable to determine the latest version of
 # the following packages so we need to provide explicit
