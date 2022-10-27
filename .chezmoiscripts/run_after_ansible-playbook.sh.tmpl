@@ -1,7 +1,0 @@
-#!/bin/bash
-
-tmpfile=$(mktemp ~/.chezmoidataXXXXXX.yaml)
-trap 'rm -f $tmpfile' EXIT
-
-chezmoi data > $tmpfile
-ansible-playbook -e @$tmpfile ~/lib/ansible/playbook.yaml
