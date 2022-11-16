@@ -33,6 +33,9 @@ end
 
 require'lspconfig'.pyright.setup{
     on_attach=on_attach,
+    root_dir = function()
+      return vim.fn.getcwd()
+    end,
 }
 require'lspconfig'.bashls.setup{
     on_attach=on_attach,
