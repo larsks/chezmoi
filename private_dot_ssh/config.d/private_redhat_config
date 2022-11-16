@@ -23,6 +23,7 @@ Host pilotssh.redhat.com pilot rhvpn2
     DynamicForward 1080
 
 Host shell.bos.redhat.com
+    HostKeyAlgorithms +ssh-rsa,ssh-dss
     User lkellogg
 
 Host fedorashell.rdu.redhat.com fedorashell01.rdu.redhat.com fedorashell
