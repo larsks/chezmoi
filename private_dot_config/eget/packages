@@ -3,7 +3,7 @@ zyedidia/eget
 kubernetes-sigs/kind
 jmespath/jp
 koalaman/shellcheck
-wercker/stern
+stern/stern
 owenthereal/upterm
 ryane/kfilt
 homeport/dyff
