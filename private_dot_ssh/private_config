@@ -55,6 +55,11 @@ Host *.upterm.dev
     PubkeyAcceptedAlgorithms +ssh-rsa
     HostkeyAlgorithms +ssh-rsa
 
+Host rhvpn
+    Hostname localhost
+    Port 4122
+    User jumpuser
+
 Host *
     AddKeysToAgent no
     ForwardAgent yes
