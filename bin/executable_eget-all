@@ -69,5 +69,7 @@ for pkgspec in "${packages[@]}"; do
 	eval "pkg=( $pkgspec )"
 	# shellcheck disable=SC2154
 	log "installing ${pkg[0]}"
-	eget --upgrade-only "${pkg[@]}" < /dev/null
+	if ! eget --upgrade-only "${pkg[@]}" < /dev/null; then
+		error "failed to install $pkgspec"
+	fi
 done
