@@ -10,3 +10,7 @@ windows:
     layout: tiled
     panes:
       - exec weeslack
+  - window_name: tut
+    layout: tiled
+    panes:
+      - exec tut
