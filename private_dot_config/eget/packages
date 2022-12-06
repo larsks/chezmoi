@@ -1,5 +1,8 @@
 zyedidia/eget
 
+golangci/golangci-lint -a .tar.gz
+#helm/helm
+kubernetes-sigs/krew --to kubectl-krew
 kubernetes-sigs/kind
 jmespath/jp
 koalaman/shellcheck
@@ -41,8 +44,11 @@ ClementTsang/bottom -a tar.gz -a ^musl -a ^gnu2 -f btm
 gohugoio/hugo -a linux-amd64.tar.gz -a extended
 RasmusLindroth/tut -a amd64 -a ^static
 cli/cli -a .tar.gz
-
-# eget is unable to determine the latest version of
-# the following packages so we need to provide explicit
-# tags
-kubernetes-sigs/kustomize -t kustomize/v4.5.7
+kubernetes-sigs/kustomize -t kustomize
+jesseduffield/lazygit
+teaxyz/cli
+particledecay/kconf
+coreos/butane -a ^asc
+open-policy-agent/opa -a ^static
+open-policy-agent/conftest -a .tar.gz
+sachaos/viddy
