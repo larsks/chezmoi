@@ -20,7 +20,7 @@ function MarkdownForBrowser()
 	setlocal ft=markdown tw=0
 endfunction
 
-au BufRead *.toot,/tmp/tut* setlocal ft=text wrap linebreak
+au BufRead *.toot,/tmp/tut* setlocal ft=text tw=0 wrap linebreak
 au BufRead *.ksy setlocal ft=yaml
 au BufRead *.md setlocal ft=markdown
 au BufRead *.ldg setlocal ft=ledger

@@ -36,6 +36,7 @@ return require('packer').startup(function()
   -- vim-vinegar enhances the file selection mode. Press "-" in a buffer to
   --  go to a list of files in the same directory.
   use 'tpope/vim-vinegar'
+  use 'tpope/vim-surround'
   -- use 'vim-airline/vim-airline'
   use {
       'nvim-lualine/lualine.nvim',
