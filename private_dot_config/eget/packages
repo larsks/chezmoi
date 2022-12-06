@@ -52,3 +52,5 @@ coreos/butane -a ^asc
 open-policy-agent/opa -a ^static
 open-policy-agent/conftest -a .tar.gz
 sachaos/viddy
+antonmedv/fx
+noobaa/noobaa-operator --to noobaa
