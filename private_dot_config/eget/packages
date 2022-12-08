@@ -54,3 +54,4 @@ open-policy-agent/conftest -a .tar.gz
 sachaos/viddy
 antonmedv/fx
 noobaa/noobaa-operator --to noobaa
+dandavison/delta -a gnu.tar.gz
