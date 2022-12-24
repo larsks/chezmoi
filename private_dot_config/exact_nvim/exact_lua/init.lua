@@ -18,6 +18,8 @@ o.ruler = true
 o.showmatch = true
 o.termguicolors = true
 o.wrap = false
+o.incsearch = true
+o.ignorecase = true
 
 o.bg = 'dark'
 o.cmdheight = 2
