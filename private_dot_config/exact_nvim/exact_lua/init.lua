@@ -34,6 +34,11 @@ o.updatetime = 100
 o.scrolloff = 20
 o.signcolumn = "yes:2"
 
+-- from https://superuser.com/a/302189
+o.ttyfast = true
+o.synmaxcol = 200
+o.lazyredraw = true
+
 -- in init.vim this was set wildignore += "*.mpy", but since wildignore
 -- appears to default to the empty string this should be fine.
 o.wildignore = "*.mpy"
