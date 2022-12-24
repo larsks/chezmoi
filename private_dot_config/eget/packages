@@ -8,6 +8,7 @@ argoproj-labs/argocd-autopilot --to argocd-autopilot
 aristocratos/btop
 barnybug/cli53
 browsh-org/browsh -a browsh_1.8.0_linux_amd64
+cbroglie/mustache
 ClementTsang/bottom -a tar.gz -a ^musl -a ^gnu2 -f btm
 cli/cli -a .tar.gz
 coreos/butane -a ^asc
@@ -20,12 +21,14 @@ filosottile/mkcert
 fullstorydev/grpcurl
 gohugoio/hugo -a linux-amd64.tar.gz -a extended
 golangci/golangci-lint -a .tar.gz
+hairyhenderson/gomplate -a slim
 #helm/helm
 homeport/dyff
 jesseduffield/lazygit
 jgm/pandoc
 jmespath/jp
 junegunn/fzf
+kastenhq/kubestr
 koalaman/shellcheck
 kubernetes/minikube -a minikube-linux-amd64
 kubernetes-sigs/kind
