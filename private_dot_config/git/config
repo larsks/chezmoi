@@ -87,6 +87,8 @@
 	path = ~/.config/git/redhat.conf
 [includeIf "gitdir/i:~/projects/ocp-on-nerc/"]
 	path = ~/.config/git/redhat.conf
+[includeIf "gitdir/i:~/projects/nerc/"]
+	path = ~/.config/git/redhat.conf
 [includeIf "gitdir/i:~/projects/redhat/"]
 	path = ~/.config/git/redhat.conf
 [includeIf "gitdir/i:~/rpmbuild/BUILD/"]
