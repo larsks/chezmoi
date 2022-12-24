@@ -25,7 +25,7 @@ au BufRead *.ksy setlocal ft=yaml
 au BufRead *.md setlocal ft=markdown
 au BufRead *.ldg setlocal ft=ledger
 au BufRead /tmp/firenvim_* call MarkdownForBrowser()
-au BufRead */COMMIT_EDITMSG setlocal ft=markdown tw=75
+au BufRead .stgit*.patch,*/COMMIT_EDITMSG setlocal ft=markdown tw=75
 au! BufRead,BufNewFile *.bu setlocal ft=yaml
 au! BufRead,BufNewFile *.pp setfiletype puppet
 au! BufRead,BufNewFile Puppetfile setfiletype ruby
