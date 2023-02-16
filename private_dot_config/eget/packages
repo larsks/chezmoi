@@ -30,11 +30,13 @@ jmespath/jp
 junegunn/fzf
 kastenhq/kubestr
 koalaman/shellcheck
+kubecfg/kubecfg
 kubernetes/minikube -a minikube-linux-amd64
 kubernetes-sigs/kind
 kubernetes-sigs/krew --to kubectl-krew
 kubernetes-sigs/kustomize -t kustomize
 kubevirt/kubevirt --to virtctl
+kyoh86/richgo -a amd64 -a .tar.gz
 mikefarah/yq --to yyq -a yq_linux_amd64
 mozilla/sops
 muesli/duf -a tar.gz
@@ -53,8 +55,10 @@ ryane/kfilt
 sachaos/viddy
 sharkdp/fd -a ^musl
 sigstore/rekor -a rekor-cli-linux-amd64
+smallstep/cli -a amd64 -a ^pem -a ^sig -f step
 stedolan/jq
 stern/stern
 teaxyz/cli
+tilt-dev/ctlptl
 twpayne/chezmoi -a chezmoi-linux-amd64
 zyedidia/micro -a linux64.tar.gz
