@@ -1,8 +1,17 @@
+Host gw gw.house
+  User ubnt
+
 Host office-node-*
   User root
 
 Host wifi-0 wifi-1 wifi-0.house wifi-1.house
   User root
+
+Host squeezeboxradio.house
+  KexAlgorithms diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+  HostkeyAlgorithms ssh-rsa
+  PubkeyAcceptedAlgorithms ssh-rsa
+  RSAMinSize 1024
 
 Host office-sw-* office-sw-*.house 192.168.7.*
   KexAlgorithms diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
@@ -11,3 +20,12 @@ Host office-sw-* office-sw-*.house 192.168.7.*
   RSAMinSize 1024
 
   User admin
+
+Host *.legacy.virt
+  KexAlgorithms diffie-hellman-group-exchange-sha1,diffie-hellman-group14-sha1,diffie-hellman-group1-sha1
+  HostkeyAlgorithms ssh-rsa
+  PubkeyAcceptedAlgorithms ssh-rsa
+
+Host *.virt
+    UserKnownHostsFile /dev/null
+    StrictHostkeyChecking no

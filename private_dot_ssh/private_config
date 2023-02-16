@@ -24,7 +24,7 @@ Host review.*
     ForwardAgent no
     ForwardX11 no
 
-Host 172.* 10.* 192.168.* *.localdomain 127.0.0.1 localhost *.virt *.storage
+Host 172.* 10.* 192.168.* *.localdomain 127.0.0.1 localhost *.storage
     UserKnownHostsFile /dev/null
     StrictHostkeyChecking no
 
