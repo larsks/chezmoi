@@ -31,31 +31,17 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<Leader>f', vim.lsp.buf.formatting, bufopts)
 end
 
-require'lspconfig'.pyright.setup{
-    on_attach=on_attach,
-    root_dir = function()
-      return vim.fn.getcwd()
-    end,
-}
-require'lspconfig'.bashls.setup{
-    on_attach=on_attach,
-}
-require'lspconfig'.gopls.setup{
-    on_attach=on_attach,
-}
+require('lsp-setup').setup({
+	on_attach=on_attach,
+	servers = {
+		bashls = {},
+		clangd = {},
+		gopls = {},
+		html = {},
+		jsonls = {},
+		jsonnet_ls = {},
+		pyright = {},
+		marksman = {},
+	}
+})
 
-local capabilities = require('cmp_nvim_lsp')
-    .default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-require'lspconfig'.html.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
-require'lspconfig'.jsonls.setup {
-    on_attach = on_attach,
-    capabilities = capabilities,
-}
-require('lspconfig').yamlls.setup {
-    on_attach = on_attach,
-}
-require'lspconfig'.clangd.setup{}
