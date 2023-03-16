@@ -116,7 +116,7 @@ if exists('g:started_by_firenvim')
     function! OnUIEnter(event) abort
         if 'Firenvim' ==# get(get(nvim_get_chan_info(a:event.chan), 'client', {}), 'name', '')
             set laststatus=0
-            set guifont=monospace:h10
+	    set guifont=Iosevka\ Fixed\ Light:h16
 
             call timer_start(500, function("AdjustMinimumLines"))
         endif
