@@ -32,16 +32,12 @@ local on_attach = function(client, bufnr)
 end
 
 require('lsp-setup').setup({
-	on_attach=on_attach,
-	servers = {
-		bashls = {},
-		clangd = {},
-		gopls = {},
-		html = {},
-		jsonls = {},
-		jsonnet_ls = {},
-		pyright = {},
-		marksman = {},
-	}
+    servers = {
+        bashls = {},
+	clangd = {},
+	gopls = {},
+	html = {},
+	marksman = {},
+	pyright = {},
+    }
 })
-
