@@ -64,6 +64,9 @@ g.firenvim_config = {
     }
 }
 
+g.gitblame_enabled = 0
+g.black_quiet = 1
+
 require('plugins')
 require('init_lspconfig')
 require('init_cmp')

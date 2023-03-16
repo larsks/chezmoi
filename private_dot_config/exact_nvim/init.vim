@@ -36,6 +36,35 @@ au FileType python autocmd BufWritePre <buffer> if get(b:, 'black_enabled', 1) |
 " Stop shellcheck from whining about *.env files
 au! BufRead,BufNewFile *.env lua vim.diagnostic.disable(0)
 
+function ClangFormatBuffer()
+  if &modified && get(b:, 'clang_format_enabled', 1) == 1 && !empty(findfile('.clang-format', expand('%:p:h') . ';'))
+    let cursor_pos = getpos('.')
+    :%!clang-format
+    call setpos('.', cursor_pos)
+  else
+    echom "clang-format is disabled"
+  endif
+endfunction
+
+function! ClangFormatToggle()
+    if get(b:, 'clang_format_enabled', 1) == 1
+        let b:clang_format_enabled = 0
+        echom "clang-format disabled"
+    else
+        let b:clang_format_enabled = 1
+        echom "clang-format enabled"
+    endif
+endfunction
+
+command! ClangFormatDisable :let b:clang_format_enabled=0
+command! ClangFormatEnable :let b:clang_format_enabled=1
+command! ClangFormatToggle :call ClangFormatToggle()
+command! CT :call ClangFormatToggle()
+
+let b:clang_format_enabled = 1
+
+autocmd BufWritePre *.h,*.hpp,*.c,*.cpp,*.ino :call ClangFormatBuffer()
+
 function! BlackToggle()
     if get(b:, 'black_enabled', 1) == 1
         let b:black_enabled = 0

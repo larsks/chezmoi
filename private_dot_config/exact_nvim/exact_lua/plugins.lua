@@ -113,4 +113,13 @@ return require('packer').startup(function()
           )
       end
   }
+
+  use {
+      'junnplus/lsp-setup.nvim',
+      requires = {
+          'neovim/nvim-lspconfig',
+          'williamboman/mason.nvim',
+          'williamboman/mason-lspconfig.nvim',
+      }
+  }
 end)
