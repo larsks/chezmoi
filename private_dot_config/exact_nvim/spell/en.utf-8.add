@@ -434,3 +434,5 @@ mountpoints
 Severability
 rbac
 patchset
+nftables
+ruleset
