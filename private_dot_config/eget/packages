@@ -31,6 +31,7 @@ junegunn/fzf
 kastenhq/kubestr
 koalaman/shellcheck
 kubecfg/kubecfg
+kubernetes/kompose --to kompose -a .tar.gz
 kubernetes/minikube -a minikube-linux-amd64
 kubernetes-sigs/kind
 kubernetes-sigs/krew --to kubectl-krew
@@ -62,3 +63,4 @@ teaxyz/cli
 tilt-dev/ctlptl
 twpayne/chezmoi -a chezmoi-linux-amd64
 zyedidia/micro -a linux64.tar.gz
+artempyanykh/marksman
