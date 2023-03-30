@@ -6,12 +6,14 @@ aquasecurity/trivy -a Linux-64bit.tar.gz -a ^pem -a ^sig
 argoproj/argo-cd --to argocd
 argoproj-labs/argocd-autopilot --to argocd-autopilot
 aristocratos/btop
+artempyanykh/marksman
 barnybug/cli53
 browsh-org/browsh -a browsh_1.8.0_linux_amd64
 cbroglie/mustache
 ClementTsang/bottom -a tar.gz -a ^musl -a ^gnu2 -f btm
 cli/cli -a .tar.gz
 coreos/butane -a ^asc
+cue-lang/cue
 dandavison/delta -a gnu.tar.gz
 derailed/k9s
 FairwindsOps/polaris
@@ -21,6 +23,7 @@ filosottile/mkcert
 fullstorydev/grpcurl
 gohugoio/hugo -a linux-amd64.tar.gz -a extended
 golangci/golangci-lint -a .tar.gz
+google/go-containerregistry -f crane
 hairyhenderson/gomplate -a slim
 #helm/helm
 homeport/dyff
@@ -62,5 +65,5 @@ stern/stern
 teaxyz/cli
 tilt-dev/ctlptl
 twpayne/chezmoi -a chezmoi-linux-amd64
+yannh/kubeconform
 zyedidia/micro -a linux64.tar.gz
-artempyanykh/marksman
